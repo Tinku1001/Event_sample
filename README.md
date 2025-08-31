@@ -2,7 +2,7 @@
 
 A full-stack web application built with Django (backend) and React (frontend) for event management.
 
-## 🚀 Features
+##  Features
 
 - Django REST API backend
 - React frontend with modern UI
@@ -11,7 +11,7 @@ A full-stack web application built with Django (backend) and React (frontend) fo
 - SQLite database
 - Docker support
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before running this application, make sure you have the following installed:
 
@@ -21,7 +21,7 @@ Before running this application, make sure you have the following installed:
 - **Git**
 - **Docker & Docker Compose** (optional)
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### Method 1: Manual Setup
 
@@ -86,7 +86,7 @@ Before running this application, make sure you have the following installed:
    Frontend will be available at `http://localhost:3000`
 
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 EVENT_SAMPLE/
