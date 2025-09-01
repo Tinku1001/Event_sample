@@ -56,7 +56,6 @@ Before running this application, make sure you have the following installed:
    python manage.py migrate
    ```
 
-
 5. **Start Django development server**
    ```bash
    python manage.py runserver
@@ -85,6 +84,69 @@ Before running this application, make sure you have the following installed:
    ```
    Frontend will be available at `http://localhost:3000`
 
+### Method 2: Docker Setup
+
+#### Option A: Using Docker Compose (Recommended)
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd EVENT_SAMPLE
+   ```
+
+2. **Run with Docker Compose**
+   ```bash
+   docker-compose up --build
+   ```
+
+3. **Access the application**
+   - Backend API: `http://localhost:8000`
+   - Frontend: `http://localhost:3000`
+
+4. **Run in detached mode (background)**
+   ```bash
+   docker-compose up -d --build
+   ```
+
+5. **Stop the services**
+   ```bash
+   docker-compose down
+   ```
+
+#### Option B: Manual Docker Commands
+
+**Backend (Django) Container:**
+
+1. **Navigate to backend directory**
+   ```bash
+   cd backend
+   ```
+
+2. **Build the Docker image**
+   ```bash
+   docker build -t event-backend .
+   ```
+
+3. **Run the container**
+   ```bash
+   docker run -d -p 8000:8000 --name django-backend event-backend
+   ```
+
+4. **View running containers**
+   ```bash
+   docker ps
+   ```
+
+5. **View logs**
+   ```bash
+   docker logs django-backend
+   ```
+
+6. **Stop the container**
+   ```bash
+   docker stop django-backend
+   ```
+
 
 ## Project Structure
 
@@ -97,14 +159,16 @@ EVENT_SAMPLE/
 │   ├── venv/                   # Virtual environment
 │   ├── manage.py              # Django management script
 │   ├── requirements.txt       # Python dependencies
+│   ├── Dockerfile             # Docker configuration for backend
 │   └── db.sqlite3            # SQLite database
 ├── frontend/                   # React frontend
 │   ├── node_modules/          # Node dependencies
 │   ├── public/                # Public assets
 │   ├── src/                   # React source code
 │   ├── package.json           # Node dependencies
+│   ├── Dockerfile             # Docker configuration for frontend
 │   └── tailwind.config.js     # Tailwind CSS config
 ├── .gitignore                 # Git ignore rules
-├── docker-compose.yml         # Docker configuration
+├── docker-compose.yml         # Docker Compose configuration
 └── README.md                  # This file
 ```
