@@ -86,34 +86,7 @@ Before running this application, make sure you have the following installed:
 
 ### Method 2: Docker Setup
 
-#### Option A: Using Docker Compose (Recommended)
-
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd EVENT_SAMPLE
-   ```
-
-2. **Run with Docker Compose**
-   ```bash
-   docker-compose up --build
-   ```
-
-3. **Access the application**
-   - Backend API: `http://localhost:8000`
-   - Frontend: `http://localhost:3000`
-
-4. **Run in detached mode (background)**
-   ```bash
-   docker-compose up -d --build
-   ```
-
-5. **Stop the services**
-   ```bash
-   docker-compose down
-   ```
-
-#### Option B: Manual Docker Commands
+#### Option A: Manual Docker Commands
 
 **Backend (Django) Container:**
 
