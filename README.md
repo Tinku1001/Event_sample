@@ -2,7 +2,7 @@
 
 A full-stack web application built with Django (backend) and React (frontend) for event management.
 
-## 🚀 Features
+##  Features
 
 - Django REST API backend
 - React frontend with modern UI
@@ -11,7 +11,7 @@ A full-stack web application built with Django (backend) and React (frontend) fo
 - SQLite database
 - Docker support
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before running this application, make sure you have the following installed:
 
@@ -21,7 +21,7 @@ Before running this application, make sure you have the following installed:
 - **Git**
 - **Docker & Docker Compose** (optional)
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### Method 1: Manual Setup
 
@@ -56,7 +56,6 @@ Before running this application, make sure you have the following installed:
    python manage.py migrate
    ```
 
-
 5. **Start Django development server**
    ```bash
    python manage.py runserver
@@ -85,8 +84,44 @@ Before running this application, make sure you have the following installed:
    ```
    Frontend will be available at `http://localhost:3000`
 
+### Method 2: Docker Setup
 
-## 📁 Project Structure
+#### Option A: Manual Docker Commands
+
+**Backend (Django) Container:**
+
+1. **Navigate to backend directory**
+   ```bash
+   cd backend
+   ```
+
+2. **Build the Docker image**
+   ```bash
+   docker build -t event-backend .
+   ```
+
+3. **Run the container**
+   ```bash
+   docker run -d -p 8000:8000 --name django-backend event-backend
+   ```
+
+4. **View running containers**
+   ```bash
+   docker ps
+   ```
+
+5. **View logs**
+   ```bash
+   docker logs django-backend
+   ```
+
+6. **Stop the container**
+   ```bash
+   docker stop django-backend
+   ```
+
+
+## Project Structure
 
 ```
 EVENT_SAMPLE/
@@ -97,14 +132,16 @@ EVENT_SAMPLE/
 │   ├── venv/                   # Virtual environment
 │   ├── manage.py              # Django management script
 │   ├── requirements.txt       # Python dependencies
+│   ├── Dockerfile             # Docker configuration for backend
 │   └── db.sqlite3            # SQLite database
 ├── frontend/                   # React frontend
 │   ├── node_modules/          # Node dependencies
 │   ├── public/                # Public assets
 │   ├── src/                   # React source code
 │   ├── package.json           # Node dependencies
+│   ├── Dockerfile             # Docker configuration for frontend
 │   └── tailwind.config.js     # Tailwind CSS config
 ├── .gitignore                 # Git ignore rules
-├── docker-compose.yml         # Docker configuration
+├── docker-compose.yml         # Docker Compose configuration
 └── README.md                  # This file
 ```
