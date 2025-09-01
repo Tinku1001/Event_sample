@@ -2,15 +2,24 @@ version: '3.8'
 
 services:
   backend:
-    build: .
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
-      - uploads_data:/app/uploads
+      - ./backend:/app
     environment:
       - DEBUG=1
-      - PYTHONUNBUFFERED=1
-
-volumes:
-  uploads_data:
+    
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+    depends_on:
+      - backend
